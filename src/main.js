@@ -37,5 +37,14 @@ const mapSize = [64, 64];
     app.stage.addChild(player);
     mapContainer.position.set(player.x, player.y);
 
+    document.addEventListener('keydown', (e) => {
+        mapContainer.x -= (e.key === 'a' ? -1 : e.key === 'd' ? 1 : 0) * tileWidth / 2;
+        mapContainer.y -= (e.key === 'w' ? -1 : e.key === 's' ? 1 : 0) * tileHeight / 2;
+    });
+
+    app.ticker.add((time) => {
+
+    })
+
     document.body.appendChild(app.canvas);
 })();
